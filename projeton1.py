@@ -65,6 +65,14 @@ def removerUsuario(nome):
         print(f"Foi encontrado o email: {nome} e foi deletado.")
     else:
         print(f"Não foi encontrado na lista o email {nome}")
+def alterarusúario(nome):
+    print("-=" *30)
+    print("buscando um usúario pelo nome:...")
+    sleep(1)
+    if nome in cadastroUsuarios:
+        cadastroUsuarios.remove(nome)      
+    
+    
 
 
 # Programa principal
@@ -105,6 +113,10 @@ def menu():
                 buscandoUsuario(input("Digite o nome que você deseja encontrar na lista: "))
             if op == 5:
                 removerUsuario(input("Digite o email do usuário que deseja remover: "))
+            if op == 6:
+                alterarusúario(input("Digite o nome do usúario que deseja alterar:"))
+                nome=str(input("Digite o novo nome:"))
+                cadastroUsuarios.append(nome)
             if op == 7:
                 i = 100
 menu()
