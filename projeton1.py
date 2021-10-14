@@ -114,7 +114,7 @@ def menu():
             if op == 5:
                 removerUsuario(input("Digite o email do usuário que deseja remover: "))
             if op == 6:
-                alterarusúario(input("Digite o nome do usúario que deseja alterar:"))
+                alterarusúario(input("Digite o e-mail do usúario que deseja alterar:"))
                 nome=str(input("Digite o novo nome:"))
                 cadastroUsuarios.append(nome)
             if op == 7:
