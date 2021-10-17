@@ -119,7 +119,3 @@ def menu():
             if op == 7:
                 i = 100
 menu()
-
-
-
-
