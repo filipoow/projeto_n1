@@ -8,7 +8,6 @@ while ver == False:
     user = input("Digite seu login: ")
     password = input("Digite sua senha: ")
 
-   
     if office == "Gestor":
         if user and password == "Adm":
             sleep(2)
@@ -22,18 +21,6 @@ while ver == False:
 
 # Funções
 
-    print("-=" *30)
-    office = input("Digite seu cargo: ")
-    user = input("Digite seu login: ")
-    password = input("Digite sua senha: ")
-    if office == "Gestor":
-        if user and password == "Adm":
-            sleep(2)
-            print("Entrando no sistema...")
-    else:
-        print("-=" *30)
-        print("Seu usuário não tem acesso as funções de gestor.")
-    
 def usuariosCadastrados():
     print("-=" *30)
     print("Os usuários cadastrados são: ")
@@ -72,7 +59,11 @@ def alterarusúario(nome):
     print("buscando um usúario pelo nome:...")
     sleep(1)
     if nome in cadastroUsuarios:
-        cadastroUsuarios.remove(nome)      
+        cadastroUsuarios.remove(nome)
+        nome=str(input("Digite o novo nome: "))
+        cadastroUsuarios.append(nome)      
+    else:
+        print("Não foi encontrado esse usuário no sistema.")
     
 # Programa principal
 cadastroUsuarios = []
@@ -113,9 +104,7 @@ def menu():
             if op == 5:
                 removerUsuario(input("Digite o email do usuário que deseja remover: "))
             if op == 6:
-                alterarusúario(input("Digite o e-mail do usúario que deseja alterar:"))
-                nome=str(input("Digite o novo nome:"))
-                cadastroUsuarios.append(nome)
+                alterarusúario(input("Digite o e-mail do usúario que deseja alterar: "))
             if op == 7:
                 i = 100
 menu()
